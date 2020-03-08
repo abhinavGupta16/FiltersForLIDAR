@@ -1,5 +1,5 @@
-from Helper import choose_filter
-from TemporalFilter import TemporalFilter
+from src.Helper import choose_filter
+from src.TemporalFilter import TemporalFilter
 
 
 def main(input_file_name="files/input.txt", output_file_name="files/output.txt"):
@@ -25,6 +25,7 @@ def main(input_file_name="files/input.txt", output_file_name="files/output.txt")
     except:
         print("Something went wrong, check the input file")
         raise
+
 
 if __name__ == "__main__":
     main()

@@ -1,10 +1,9 @@
 from numpy.testing import assert_
-from Helper import calculate_range_filter, calculate_temporal_filter
-from TemporalFilter import TemporalFilter
+from src.Helper import calculate_range_filter, calculate_temporal_filter
+from src.TemporalFilter import TemporalFilter
 from Main import main
 
-
-class Test:
+class UnitTest:
 
     def test_main(self):
         """
@@ -23,13 +22,13 @@ class Test:
                 if expected_output is not None:
                     assert_(output == expected_output,
                             generate_error_string(output, expected_output))
-                break;
+                break
 
             if not expected_output:
                 if output is not None:
                     assert_(output == expected_output,
                             generate_error_string(output, expected_output))
-                break;
+                break
 
             assert_(output == expected_output, generate_error_string(expected_output, output))
 
@@ -109,7 +108,7 @@ def generate_error_string(output, expected_output):
 
 
 if __name__ == '__main__':
-    test = Test()
+    test = UnitTest()
     test.test_temporal_filter()
     test.test_range_filter()
     test.test_main()
