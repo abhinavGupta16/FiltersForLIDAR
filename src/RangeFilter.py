@@ -1,7 +1,7 @@
 class RangeFilter:
     def __init__(self):
-        self._minRange = 0.03
-        self._maxRange = 50
+        self._min_range = 0.03
+        self._max_range = 50
 
     def update(self, measurements):
         """
@@ -10,7 +10,17 @@ class RangeFilter:
         :return: NA
         """
         for i in range(len(measurements)):
-            if measurements[i] < self._minRange:
-                measurements[i] = self._minRange
-            elif measurements[i] > self._maxRange:
-                measurements[i] = self._maxRange
+            if measurements[i] < self._min_range:
+                measurements[i] = self._min_range
+            elif measurements[i] > self._max_range:
+                measurements[i] = self._max_range
+
+    def change_range(self, min_range, max_range):
+        """
+        Change the range of allowed upper and lower limit in measurements
+        :param min_range: int (lower bound)
+        :param max_range: int (Upper bound)
+        :return:
+        """
+        self._min_range = min_range
+        self._max_range = max_range

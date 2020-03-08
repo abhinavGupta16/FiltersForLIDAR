@@ -7,6 +7,8 @@
     <measurements>
     <Type of filter (t/r)>
     <measurements>
+    <Type of filter (ut/ur)>
+    <min max>
     <Type of filter (t/r)>
     <measurements>
     .....

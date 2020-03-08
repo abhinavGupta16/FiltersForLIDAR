@@ -4,6 +4,7 @@ sys.path.insert(0, '..')
 from numpy.testing import assert_
 from src.Helper import calculate_range_filter, calculate_temporal_filter
 import src.TemporalFilter
+from src.RangeFilter import RangeFilter
 import Main
 
 
@@ -13,13 +14,13 @@ def test_main():
     :return: NA
     """
     print("Testing Main")
-    Main.main("../files/sample_input.txt", "../files/expected_output.txt")
+    Main.main("../files/sample_input.txt", "../files/output.txt")
     output_file = open("../files/output.txt", 'r')
     expected_output_file = open("../files/expected_output.txt", 'r')
 
     while True:
-        output = output_file.readline()
-        expected_output = expected_output_file.readline()
+        output = output_file.readline()[:-1]
+        expected_output = expected_output_file.readline()[:-1]
         if not output:
             if expected_output is not None:
                 assert_(output == expected_output,
@@ -45,13 +46,14 @@ def test_range_filter():
     :return: NA
     """
     print("Testing Range Filter")
+    range_filter = RangeFilter()
     measurements = [0.0, 1.0, 2.0, 1.0, 3.0]
-    calculate_range_filter(measurements)
+    calculate_range_filter(measurements, range_filter)
     assert_(measurements == [0.03, 1.0, 2.0, 1.0, 3.0],
             generate_error_string(measurements, [0.03, 1.0, 2.0, 1.0, 3.0]))
 
     measurements = [0.0, 1.0, 2.0, 1.0, 100]
-    calculate_range_filter(measurements)
+    calculate_range_filter(measurements, range_filter)
     assert_(measurements == [0.03, 1.0, 2.0, 1.0, 50],
             generate_error_string(measurements, [0.03, 1.0, 2.0, 1.0, 50]))
     print("Testing Range Filter Success")

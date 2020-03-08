@@ -1,5 +1,6 @@
 from src.Helper import choose_filter
 from src.TemporalFilter import TemporalFilter
+from src.RangeFilter import RangeFilter
 
 
 def main(input_file_name="files/input.txt", output_file_name="files/output.txt"):
@@ -11,6 +12,7 @@ def main(input_file_name="files/input.txt", output_file_name="files/output.txt")
     """
     try:
         temporal_filter = TemporalFilter()
+        range_filter = RangeFilter()
         input_file = open(input_file_name, 'r')
         output_file = open(output_file_name, 'w')
 
@@ -18,7 +20,7 @@ def main(input_file_name="files/input.txt", output_file_name="files/output.txt")
             argument = input_file.readline().rstrip('\n')
             if not argument:
                 break
-            choose_filter(argument, temporal_filter, input_file, output_file)
+            choose_filter(argument, temporal_filter, range_filter, input_file, output_file)
 
         input_file.close()
         output_file.close()
