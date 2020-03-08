@@ -1,7 +1,9 @@
 
 ## The module implements the LIDAR noise filters - Range and Temporal Filter
-1) The input is taken via ".txt" file, which ca be easily changed in the future due to the modular design
-2) The input file reads the as follows -  
+1) Run the main function by simply running - "python Main.py" from the root directory
+2) Run the Unit Tests by simply running - "python UnitTest.py" from the Test directory
+3) The input is taken via ".txt" file, which ca be easily changed in the future due to the modular design
+4) The input file reads the as follows -  
     &lt;Type of filter (t/r)&gt;  
     &lt;D value&gt;  
     &lt;measurements&gt;  
@@ -13,7 +15,7 @@
     &lt;measurements&gt;  
     .....  
     .....  
-3) An output file is generated of the output as filtered. This can again be changes easily due to the modular design
-4) Output file will contain measurements after filters in each line.
-5) Parse errors of the file simply throws an error and stops execution
-6) MainTest executes unit testing (100% coverage). All the functions and methods are run and tested.
+5) An output file is generated of the output as filtered. This can again be changes easily due to the modular design
+6) Output file will contain measurements after filters in each line.
+7) Parse errors of the file simply throws an error and stops execution
+8) MainTest executes unit testing (100% coverage). All the functions and methods are run and tested.
