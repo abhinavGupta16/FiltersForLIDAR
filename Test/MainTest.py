@@ -5,18 +5,14 @@ from Main import main
 
 
 class Test:
-    def __init__(self):
-        pass
 
     def test_main(self):
         """
         Test the main() function
         :return: NA
         """
-
         print("Testing Main")
-
-        # main("files/input.txt")
+        main("../files/sample_input.txt", "../files/expected_output.txt")
         output_file = open("../files/output.txt", 'r')
         expected_output_file = open("../files/expected_output.txt", 'r')
 

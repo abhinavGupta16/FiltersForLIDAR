@@ -1,5 +1,5 @@
 from RangeFilter import RangeFilter
-
+from TemporalFilter import TemporalFilter
 
 def calculate_range_filter(measurements):
     """
