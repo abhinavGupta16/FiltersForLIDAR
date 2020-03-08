@@ -8,6 +8,8 @@ def main(input_file_name="files/input.txt", output_file_name="files/output.txt")
     Main Function drives the whole Program
     LIDAR reads input from a text file
     LIDAR writes the output file values to a text file
+    :param input_file_name: String (Input file name)
+    :param output_file_name: String (Output file name)
     :return: NA
     """
     try:
