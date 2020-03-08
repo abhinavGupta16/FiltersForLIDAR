@@ -3,10 +3,6 @@ class RangeFilter:
         self._minRange = 0.03
         self._maxRange = 50
 
-    # def __init__(self, minVal, maxVal):
-    #     minRange = minVal
-    #     maxRange = maxVal
-
     def update(self, measurements):
         """
         Runs the RangeFilter to update the measurements
